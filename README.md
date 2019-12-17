@@ -7,7 +7,7 @@ class SomeViewSet(viewsets.ViewSet, generics.GenericAPIView):
     pagination_class = DynamoDBPagination
 
     def list(self, request):
-        serializer = SomehSerializer(data=request.GET)
+        serializer = SomeSerializer(data=request.GET)
         if serializer.is_valid():                                                                                                                                                                                                           
             try:
                 ddb_resp = self.get_raw_ddb_response()
