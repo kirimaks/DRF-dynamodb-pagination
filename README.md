@@ -3,6 +3,10 @@ Dynamodb pagination for django rest framework.
 
 # Usage:
 ```
+class SomeSerializer(serializers.Serializer):
+    start_key = serializers.CharField(required=False)
+    
+
 class SomeViewSet(viewsets.ViewSet, generics.GenericAPIView):
     pagination_class = DynamoDBPagination
 
